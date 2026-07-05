@@ -1,0 +1,542 @@
+@import "tailwindcss";
+
+/* ============================================
+   DESIGN SYSTEM — Vibhor Sharma Portfolio
+   Premium Dark Theme with Deep Blue/Purple/Cyan
+   ============================================ */
+
+@theme {
+  /* ── Primary: Deep Blue ── */
+  --color-primary-50: hsl(220 80% 95%);
+  --color-primary-100: hsl(220 80% 88%);
+  --color-primary-200: hsl(220 78% 78%);
+  --color-primary-300: hsl(220 76% 65%);
+  --color-primary-400: hsl(220 78% 55%);
+  --color-primary-500: hsl(220 80% 45%);
+  --color-primary-600: hsl(220 82% 38%);
+  --color-primary-700: hsl(220 84% 30%);
+  --color-primary-800: hsl(220 82% 22%);
+  --color-primary-900: hsl(220 80% 15%);
+  --color-primary-950: hsl(220 85% 8%);
+
+  /* ── Secondary: Purple ── */
+  --color-secondary-50: hsl(270 70% 95%);
+  --color-secondary-100: hsl(270 68% 88%);
+  --color-secondary-200: hsl(270 66% 78%);
+  --color-secondary-300: hsl(270 65% 65%);
+  --color-secondary-400: hsl(270 68% 55%);
+  --color-secondary-500: hsl(270 70% 50%);
+  --color-secondary-600: hsl(270 72% 42%);
+  --color-secondary-700: hsl(270 74% 34%);
+  --color-secondary-800: hsl(270 72% 26%);
+  --color-secondary-900: hsl(270 70% 18%);
+  --color-secondary-950: hsl(270 75% 10%);
+
+  /* ── Accent: Cyan ── */
+  --color-accent-50: hsl(185 80% 95%);
+  --color-accent-100: hsl(185 78% 88%);
+  --color-accent-200: hsl(185 76% 78%);
+  --color-accent-300: hsl(185 75% 65%);
+  --color-accent-400: hsl(185 78% 55%);
+  --color-accent-500: hsl(185 80% 50%);
+  --color-accent-600: hsl(185 82% 40%);
+  --color-accent-700: hsl(185 84% 32%);
+  --color-accent-800: hsl(185 82% 24%);
+  --color-accent-900: hsl(185 80% 16%);
+  --color-accent-950: hsl(185 85% 8%);
+
+  /* ── Surface: Dark Backgrounds ── */
+  --color-surface-50: hsl(220 20% 18%);
+  --color-surface-100: hsl(220 20% 14%);
+  --color-surface-200: hsl(220 20% 12%);
+  --color-surface-300: hsl(220 20% 10%);
+  --color-surface-400: hsl(220 22% 8%);
+  --color-surface-500: hsl(220 24% 7%);
+  --color-surface-600: hsl(220 26% 6%);
+  --color-surface-700: hsl(220 28% 5%);
+  --color-surface-800: hsl(220 30% 4%);
+  --color-surface-900: hsl(220 32% 3%);
+  --color-surface-950: hsl(220 35% 2%);
+
+  /* ── Typography ── */
+  --font-heading: 'Outfit', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* ── Custom Animations ── */
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-float-delayed: float 6s ease-in-out 2s infinite;
+  --animate-float-slow: float 8s ease-in-out 1s infinite;
+  --animate-pulse-glow: pulse-glow 2s ease-in-out infinite;
+  --animate-gradient-shift: gradient-shift 8s ease infinite;
+  --animate-shimmer: shimmer 2s linear infinite;
+  --animate-spin-slow: spin 8s linear infinite;
+  --animate-bounce-soft: bounce-soft 2s ease-in-out infinite;
+  --animate-slide-up: slide-up 0.6s ease-out;
+  --animate-fade-in: fade-in 0.6s ease-out;
+  --animate-scale-in: scale-in 0.5s ease-out;
+  --animate-blob: blob 7s infinite;
+
+  /* ── Spacing Scale Extension ── */
+  --spacing-18: 4.5rem;
+  --spacing-22: 5.5rem;
+  --spacing-30: 7.5rem;
+  --spacing-34: 8.5rem;
+  --spacing-88: 22rem;
+  --spacing-92: 23rem;
+  --spacing-100: 25rem;
+  --spacing-120: 30rem;
+  --spacing-140: 35rem;
+  --spacing-160: 40rem;
+}
+
+/* ── Keyframe Animations ── */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-12px) rotate(1deg); }
+  66% { transform: translateY(-6px) rotate(-1deg); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(59, 130, 246, 0.6), 0 0 60px rgba(139, 92, 246, 0.3); }
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes bounce-soft {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes blob {
+  0% { transform: translate(0px, 0px) scale(1); }
+  33% { transform: translate(30px, -50px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.9); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: var(--color-accent-400); }
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+@keyframes progress {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
+/* ── Base Styles ── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: hsl(220 80% 45%) hsl(220 20% 8%);
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--color-surface-800);
+  color: hsl(220 20% 90%);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Custom Scrollbar (Webkit) ── */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-surface-800);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    to bottom,
+    var(--color-primary-600),
+    var(--color-secondary-600)
+  );
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    to bottom,
+    var(--color-primary-500),
+    var(--color-secondary-500)
+  );
+}
+
+/* ── Selection Styles ── */
+::selection {
+  background: var(--color-primary-500);
+  color: white;
+}
+
+/* ── Glassmorphism Utilities ── */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-strong {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.glass-card {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.06) 0%,
+    rgba(255, 255, 255, 0.02) 100%
+  );
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.04) 100%
+  );
+  border-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3),
+              0 0 40px rgba(59, 130, 246, 0.1);
+}
+
+/* ── Gradient Text ── */
+.gradient-text {
+  background: linear-gradient(
+    135deg,
+    var(--color-primary-400),
+    var(--color-secondary-400),
+    var(--color-accent-400)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-blue {
+  background: linear-gradient(
+    135deg,
+    var(--color-primary-300),
+    var(--color-accent-400)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Gradient Button ── */
+.btn-gradient {
+  background: linear-gradient(
+    135deg,
+    var(--color-primary-500),
+    var(--color-secondary-500),
+    var(--color-accent-500)
+  );
+  background-size: 200% 200%;
+  animation: gradient-shift 4s ease infinite;
+  color: white;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.btn-gradient:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 40px rgba(59, 130, 246, 0.4);
+}
+
+.btn-gradient::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.2) 0%,
+    transparent 50%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.btn-gradient:hover::after {
+  opacity: 1;
+}
+
+/* ── Outline Button ── */
+.btn-outline {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  border-color: var(--color-accent-400);
+  color: var(--color-accent-400);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 40px rgba(0, 210, 211, 0.15);
+}
+
+/* ── Section Backgrounds ── */
+.section-gradient-1 {
+  background: linear-gradient(
+    180deg,
+    var(--color-surface-800) 0%,
+    hsl(225 25% 5%) 50%,
+    var(--color-surface-800) 100%
+  );
+}
+
+.section-gradient-2 {
+  background: linear-gradient(
+    180deg,
+    var(--color-surface-800) 0%,
+    hsl(260 20% 5%) 50%,
+    var(--color-surface-800) 100%
+  );
+}
+
+/* ── Animated Background Blobs ── */
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+.blob-blue {
+  background: var(--color-primary-500);
+}
+
+.blob-purple {
+  background: var(--color-secondary-500);
+}
+
+.blob-cyan {
+  background: var(--color-accent-500);
+}
+
+/* ── Glow Effects ── */
+.glow-blue {
+  box-shadow: 0 0 30px rgba(59, 130, 246, 0.3),
+              0 0 60px rgba(59, 130, 246, 0.1);
+}
+
+.glow-purple {
+  box-shadow: 0 0 30px rgba(139, 92, 246, 0.3),
+              0 0 60px rgba(139, 92, 246, 0.1);
+}
+
+.glow-cyan {
+  box-shadow: 0 0 30px rgba(0, 210, 211, 0.3),
+              0 0 60px rgba(0, 210, 211, 0.1);
+}
+
+/* ── Container ── */
+.container-custom {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .container-custom {
+    padding: 0 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-custom {
+    padding: 0 4rem;
+  }
+}
+
+/* ── Perspective for 3D Effects ── */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+/* ── Smooth Image Zoom Container ── */
+.img-zoom-container {
+  overflow: hidden;
+}
+
+.img-zoom-container img {
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.img-zoom-container:hover img {
+  transform: scale(1.08);
+}
+
+/* ── Card Lift ── */
+.card-lift {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+}
+
+/* ── Light Mode Overrides ── */
+[data-theme="light"] body {
+  background: hsl(220 20% 96%);
+  color: hsl(220 20% 15%);
+}
+
+[data-theme="light"] .glass {
+  background: rgba(255, 255, 255, 0.7);
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] .glass-card {
+  background: rgba(255, 255, 255, 0.8);
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] .glass-card:hover {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(0, 0, 0, 0.12);
+}
+
+/* ── Responsive Preview Frame ── */
+.preview-frame {
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  background: white;
+  transition: all 0.5s ease;
+}
+
+.preview-frame.desktop {
+  width: 100%;
+  height: 600px;
+}
+
+.preview-frame.tablet {
+  width: 768px;
+  height: 600px;
+  margin: 0 auto;
+}
+
+.preview-frame.mobile {
+  width: 375px;
+  height: 667px;
+  margin: 0 auto;
+  border-radius: 24px;
+}
+
+/* ── Accordion Animation ── */
+.accordion-content {
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.3s ease;
+}
+
+/* ── Loading Skeleton ── */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.05) 25%,
+    rgba(255, 255, 255, 0.1) 50%,
+    rgba(255, 255, 255, 0.05) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 8px;
+}
+
+/* ── Focus Styles (Accessibility) ── */
+:focus-visible {
+  outline: 2px solid var(--color-accent-400);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ── Skip to Content (Accessibility) ── */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  background: var(--color-primary-500);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  z-index: 1000;
+  transition: top 0.3s ease;
+}
+
+.skip-link:focus {
+  top: 0;
+}

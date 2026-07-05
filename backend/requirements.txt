@@ -1,0 +1,9 @@
+fastapi[standard]
+pymongo
+pyjwt[crypto]
+bcrypt
+python-multipart
+aiofiles
+python-dotenv
+pydantic-settings
+uvicorn
